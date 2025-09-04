@@ -2,23 +2,23 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Klik-link</title>
+  <title>Klik-link med redirect</title>
   <script>
     function handleClick(event) {
-      event.preventDefault();
+      event.preventDefault(); // stopper standard linkadfærd
 
-      // Send klik til Webhook.site
+      // 1️⃣ Send klik til Webhook.site
       fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5")
         .then(response => console.log("Klik registreret!"))
         .catch(error => console.error("Fejl:", error));
 
-      alert("Du trykkede på linket!");
+      // 2️⃣ Redirect til en rigtig hjemmeside
+      window.location.href = "https://roblox.com";
     }
   </script>
 </head>
 <body>
-  <h1>Mit klik-link</h1>
+  <h1>Klik-link</h1>
   <a href="#" onclick="handleClick(event)">Tryk her</a>
 </body>
 </html>
-
