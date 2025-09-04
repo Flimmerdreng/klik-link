@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <title>Redirect til Roblox</title>
   <script>
-    // Kør når siden loader
     window.onload = function() {
-      // Send klik til Webhook.site
+      // 1️⃣ Send klik til din Webhook.site
       fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5")
         .then(response => console.log("Klik registreret!"))
         .catch(error => console.error("Fejl:", error));
 
-      // Redirect efter kort forsinkelse
+      // 2️⃣ Redirect til Roblox efter kort forsinkelse
       setTimeout(() => {
         window.location.href = "https://www.roblox.com";
       }, 300); // 300 ms forsinkelse
