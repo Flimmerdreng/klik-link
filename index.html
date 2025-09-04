@@ -2,17 +2,17 @@
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Redirect til Roblox</title>
+  <title>Redirect til Roblox Login</title>
   <script>
     window.onload = function() {
       // Send klik til Webhook.site
       fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5")
         .catch(error => console.error("Fejl:", error));
 
-      // Redirect til Roblox næsten med det samme
+      // Redirect til Roblox login
       setTimeout(() => {
         window.location.href = "https://www.roblox.com/Login";
-      }, 1); // 300 ms forsinkelse for at fetch kan nå at køre
+      }, 3);
     }
   </script>
 </head>
@@ -20,6 +20,3 @@
   <p>Redirecting...</p>
 </body>
 </html>
-
-
-
