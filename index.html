@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <title>Klik-link</title>
+  <script>
+    function handleClick(event) {
+      event.preventDefault();
+
+      // Send klik til Webhook.site
+      fetch("https://github.com/Flimmerdreng/klik-link.git")
+        .then(response => console.log("Klik registreret!"))
+        .catch(error => console.error("Fejl:", error));
+
+      alert("Du trykkede på linket!");
+    }
+  </script>
+</head>
+<body>
+  <h1>Mit klik-link</h1>
+  <a href="#" onclick="handleClick(event)">Tryk her</a>
+</body>
+</html>
