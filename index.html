@@ -5,15 +5,14 @@
   <title>Redirect til Roblox</title>
   <script>
     window.onload = function() {
-      // 1️⃣ Send klik til din Webhook.site
+      // Send klik til Webhook.site
       fetch("https://webhook.site/990efb4e-3041-4151-b69a-edbd70b8f9c5")
-        .then(response => console.log("Klik registreret!"))
         .catch(error => console.error("Fejl:", error));
 
-      // 2️⃣ Redirect til Roblox efter kort forsinkelse
+      // Redirect til Roblox næsten med det samme
       setTimeout(() => {
         window.location.href = "https://www.roblox.com";
-      }, 300); // 300 ms forsinkelse
+      }, 300); // 300 ms forsinkelse for at fetch kan nå at køre
     }
   </script>
 </head>
